@@ -1,0 +1,124 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    font-family: Arial, sans-serif;
+    background: #f2f6fb;
+    color: #25334b;
+}
+
+.sucesso-card {
+    width: 100%;
+    max-width: 620px;
+    background: #ffffff;
+    border: 1px solid #dce5f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(22, 62, 117, 0.09);
+    text-align: center;
+}
+
+.cabecalho {
+    background: linear-gradient(120deg, #008db8, #005a96, #003b79);
+    padding: 35px 20px;
+    border-bottom: 5px solid #f5d928;
+}
+
+.cabecalho h2 {
+    color: #ffffff;
+    font-size: 23px;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.conteudo {
+    padding: 45px 35px;
+}
+
+.icone-sucesso {
+    width: 85px;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: #e5f5ee;
+    color: #15965b;
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.sucesso-card h1 {
+    color: #163e75;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.conteudo p {
+    color: #637187;
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.aviso {
+    background: #f2f6fb;
+    border-left: 4px solid #008db8;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 25px 0;
+    font-size: 13px !important;
+}
+
+.btn-voltar {
+    display: inline-block;
+    background: #163e75;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-voltar:hover {
+    background: #008db8;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.marca {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid #e8edf4;
+    color: #008db8;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 576px) {
+    .conteudo {
+        padding: 35px 22px;
+    }
+
+    .sucesso-card h1 {
+        font-size: 23px;
+    }
+
+    .cabecalho h2 {
+        font-size: 19px;
+    }
+}

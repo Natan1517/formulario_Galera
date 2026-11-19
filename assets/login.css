@@ -1,0 +1,122 @@
+
+:root {
+    --azul: #163e75;
+    --azul-claro: #008db8;
+    --azul-escuro: #003b79;
+    --fundo: #f2f6fc;
+    --texto: #25334b;
+}
+
+body {
+    background: linear-gradient(135deg, #eaf2fc, #f7faff);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    color: var(--texto);
+}
+
+main.container {
+    width: 100%;
+    max-width: 480px !important;
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 12px 40px rgba(22, 62, 117, 0.12) !important;
+    animation: aparecer 0.6s ease;
+}
+
+.card-body {
+    padding: 42px !important;
+}
+
+h1 {
+    color: var(--azul-escuro);
+    font-size: 25px !important;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.text-muted {
+    color: #718096 !important;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.form-label {
+    color: var(--azul);
+    font-weight: 600;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.form-control {
+    height: 48px;
+    border: 1px solid #dce5f0;
+    border-radius: 9px;
+    padding: 12px 14px;
+    background-color: #f9fbfe;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--azul-claro);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 141, 184, 0.12);
+}
+
+.btn-primary {
+    height: 49px;
+    border: none;
+    border-radius: 9px;
+    background: linear-gradient(120deg, var(--azul-claro), var(--azul));
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-top: 12px;
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(120deg, var(--azul), var(--azul-escuro));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(22, 62, 117, 0.2);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+.alert-danger {
+    border: none;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 576px) {
+    .card-body {
+        padding: 28px !important;
+    }
+
+    h1 {
+        font-size: 21px !important;
+    }
+}

@@ -1,0 +1,1127 @@
+
+:root {
+    --azul: #163e75;
+    --azul-escuro: #0b2850;
+    --azul-claro: #008db8;
+    --amarelo: #f5d928;
+
+    --fundo: #f2f6fb;
+    --cartao: #ffffff;
+    --superficie: #f7fafd;
+    --texto: #25364b;
+    --texto-suave: #718096;
+    --borda: #dce5ef;
+    --sombra: 0 8px 24px rgba(22, 62, 117, 0.07);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--fundo);
+    color: var(--texto);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+/* Cabeçalho */
+
+.cabecalho {
+    width: 100%;
+    overflow: hidden;
+    background: var(--azul-escuro);
+}
+
+.cabecalho img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 350px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cabecalho-texto {
+    color: #ffffff;
+    background: linear-gradient(115deg, #087fa8 0%, #07558e 55%, #003b79 100%);
+    border-bottom: 5px solid var(--amarelo);
+}
+
+.cabecalho-texto .banner {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 38px 20px;
+}
+
+.cabecalho-texto h1 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+}
+
+.cabecalho-texto p {
+    margin: 0;
+    color: #eaf6ff;
+    font-size: 15px;
+}
+
+/* Conteúdo */
+
+main.container {
+    max-width: 1000px;
+    padding-top: 32px !important;
+    padding-bottom: 35px !important;
+}
+
+/* Botões de tema */
+
+.botoes-tema {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 22px;
+}
+
+.botao-tema {
+    padding: 9px 15px;
+    border: 1px solid var(--borda);
+    border-radius: 8px;
+    background: var(--cartao);
+    color: var(--azul);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.botao-tema:hover {
+    border-color: var(--azul-claro);
+    background: #edf7fc;
+}
+
+.botao-tema.ativo {
+    border-color: var(--azul);
+    background: var(--azul);
+    color: #ffffff;
+}
+
+/* Avisos */
+
+.alert {
+    padding: 17px 20px;
+    border-radius: 10px;
+    line-height: 1.7;
+}
+
+.alert-light {
+    border: 1px solid var(--borda) !important;
+    border-left: 4px solid var(--azul-claro) !important;
+    background: var(--cartao);
+    color: var(--texto);
+}
+
+.alert-primary {
+    border: 1px solid #cce4f2;
+    border-left: 4px solid var(--azul-claro);
+    background: #eaf5fc;
+    color: #244b6b;
+}
+
+/* Progresso */
+
+.progresso {
+    overflow: hidden;
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    background: var(--cartao);
+    box-shadow: var(--sombra);
+}
+
+.progresso .card-body {
+    padding: 22px;
+}
+
+.progresso strong {
+    color: var(--azul);
+    font-size: 15px;
+}
+
+#textoProgresso {
+    color: var(--azul-claro);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.barra-progresso {
+    width: 100%;
+    height: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #e5edf5;
+}
+
+.barra-progresso-preenchida {
+    width: 0;
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(90deg, #008db8, #163e75);
+    transition: width 0.35s ease;
+}
+
+.etapas-progresso {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.etapa-progresso {
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.etapa-progresso.concluida {
+    color: var(--azul-claro);
+    font-weight: 700;
+}
+
+/* Cartões das etapas */
+
+.secao {
+    overflow: hidden;
+    margin-bottom: 24px;
+    border: 1px solid var(--borda);
+    border-radius: 13px;
+    background: var(--cartao);
+    box-shadow: var(--sombra);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.secao:hover {
+    border-color: #bfd5e8;
+    box-shadow: 0 10px 28px rgba(22, 62, 117, 0.10);
+}
+
+.secao .card-header {
+    display: flex;
+    align-items: center;
+    min-height: 62px;
+    padding: 14px 22px;
+    border-bottom: 1px solid #dce8f2;
+    background: #eaf2fa;
+    color: var(--azul-escuro);
+}
+
+.secao .card-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin: 0;
+    color: inherit;
+    font-size: 17px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.secao .card-body {
+    padding: 26px;
+    background: var(--cartao);
+}
+
+/* Número da etapa */
+
+.numero {
+    display: inline-flex;
+    flex: 0 0 34px;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    background: var(--azul);
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+/* Campos */
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--azul-escuro);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.form-control,
+.form-select {
+    min-height: 47px;
+    padding: 10px 13px;
+    border: 1px solid #cbd7e4;
+    border-radius: 8px;
+    background-color: #ffffff;
+    color: #25364b;
+    font-size: 14px;
+    box-shadow: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: #9db8d0;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--azul-claro);
+    background-color: #ffffff;
+    color: #25364b;
+    box-shadow: 0 0 0 3px rgba(0, 141, 184, 0.14);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #99a7b6;
+    opacity: 1;
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+textarea.form-control {
+    min-height: 105px;
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+}
+
+.invalid-feedback {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.obrigatorio {
+    color: #d62828;
+    font-weight: 700;
+}
+
+/* Mensagens de ajuda */
+
+.texto-idade,
+.texto-ajuda,
+.mensagem-cep {
+    display: block;
+    margin-top: 7px;
+    color: var(--texto-suave);
+    font-size: 12px;
+}
+
+.mensagem-cep.erro {
+    color: #c62828;
+    font-weight: 700;
+}
+
+.mensagem-cep.sucesso {
+    color: #168044;
+    font-weight: 700;
+}
+
+/* Confirmações */
+
+.form-check {
+    margin-bottom: 13px;
+    padding: 14px 14px 14px 2.1em;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    background: var(--superficie);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.form-check:hover {
+    border-color: #b8d1e5;
+    background: #f0f7fc;
+}
+
+.form-check-input {
+    cursor: pointer;
+}
+
+.form-check-input:checked {
+    border-color: var(--azul-claro);
+    background-color: var(--azul-claro);
+}
+
+.form-check-input:focus {
+    border-color: var(--azul-claro);
+    box-shadow: 0 0 0 3px rgba(0, 141, 184, 0.13);
+}
+
+.form-check-label {
+    color: var(--texto);
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Botões */
+
+.btn {
+    min-height: 44px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-primary {
+    padding: 11px 24px;
+    border-color: var(--azul);
+    background: var(--azul);
+}
+
+.btn-primary:hover {
+    border-color: var(--azul-escuro);
+    background: var(--azul-escuro);
+    transform: translateY(-1px);
+}
+
+.btn-outline-secondary {
+    padding: 11px 20px;
+    border-color: #cbd5df;
+    color: #536477;
+}
+
+.btn-outline-secondary:hover {
+    border-color: #8999aa;
+    background: #edf1f5;
+    color: #26364b;
+}
+
+/* Links e rodapé */
+
+a {
+    color: var(--azul-claro);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--azul-escuro);
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 30px;
+    padding: 22px 10px !important;
+    border-top: 1px solid var(--borda);
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+/* Modo escuro */
+
+body.modo-escuro {
+    --fundo: #111d2b;
+    --cartao: #1c2d3e;
+    --superficie: #24384b;
+    --texto: #e7eef6;
+    --texto-suave: #b6c4d2;
+    --borda: #3a5065;
+    --sombra: 0 8px 24px rgba(0, 0, 0, 0.16);
+
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+body.modo-escuro .cabecalho-texto {
+    border-bottom-color: var(--amarelo);
+}
+
+body.modo-escuro .botao-tema {
+    border-color: #40566b;
+    background: #24384b;
+    color: #e7eef6;
+}
+
+body.modo-escuro .botao-tema:hover {
+    border-color: #6c8ba5;
+    background: #30485e;
+}
+
+body.modo-escuro .botao-tema.ativo {
+    border-color: var(--azul-claro);
+    background: var(--azul-claro);
+    color: #ffffff;
+}
+
+body.modo-escuro .alert-light {
+    border-color: var(--borda) !important;
+    border-left-color: var(--azul-claro) !important;
+    background: var(--cartao);
+    color: var(--texto);
+}
+
+body.modo-escuro .alert-primary {
+    border-color: #40566d;
+    background: #263b50;
+    color: #e6edf5;
+}
+
+body.modo-escuro .progresso,
+body.modo-escuro .secao {
+    border-color: var(--borda);
+    background: var(--cartao);
+    box-shadow: var(--sombra);
+}
+
+body.modo-escuro .secao:hover {
+    border-color: #58748e;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+body.modo-escuro .secao .card-header {
+    border-bottom-color: #40566b;
+    background: #263c51;
+    color: #f0f5fb;
+}
+
+body.modo-escuro .secao .card-body,
+body.modo-escuro .progresso .card-body {
+    background: var(--cartao);
+    color: var(--texto);
+}
+
+body.modo-escuro .numero {
+    background: #087eae;
+    color: #ffffff;
+}
+
+body.modo-escuro .form-label,
+body.modo-escuro .progresso strong {
+    color: #e1edf8;
+}
+
+body.modo-escuro #textoProgresso,
+body.modo-escuro .etapa-progresso.concluida {
+    color: #65d0f0;
+}
+
+body.modo-escuro .form-control,
+body.modo-escuro .form-select {
+    border-color: #526b82;
+    background-color: #293d50;
+    color: #ffffff;
+}
+
+body.modo-escuro .form-control::placeholder {
+    color: #b5c3d1;
+}
+
+body.modo-escuro .form-control:hover,
+body.modo-escuro .form-select:hover {
+    border-color: #7895ad;
+}
+
+body.modo-escuro .form-control:focus,
+body.modo-escuro .form-select:focus {
+    border-color: #35b9e0;
+    background-color: #30485e;
+    color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(53, 185, 224, 0.16);
+}
+
+body.modo-escuro .form-select option {
+    background: #293d50;
+    color: #ffffff;
+}
+
+body.modo-escuro .form-check {
+    border-color: var(--borda);
+    background: var(--superficie);
+}
+
+body.modo-escuro .form-check:hover {
+    border-color: #58748e;
+    background: #30475e;
+}
+
+body.modo-escuro .form-check-label {
+    color: #e6edf5;
+}
+
+body.modo-escuro .form-check-input {
+    border-color: #71869a;
+    background-color: #293d50;
+}
+
+body.modo-escuro .form-check-input:checked {
+    border-color: var(--azul-claro);
+    background-color: var(--azul-claro);
+}
+
+body.modo-escuro .texto-idade,
+body.modo-escuro .texto-ajuda,
+body.modo-escuro .mensagem-cep,
+body.modo-escuro .etapa-progresso,
+body.modo-escuro footer {
+    color: #b6c4d2;
+}
+
+body.modo-escuro .barra-progresso {
+    background: #40566d;
+}
+
+body.modo-escuro .btn-outline-secondary {
+    border-color: #60758a;
+    color: #e6edf5;
+}
+
+body.modo-escuro .btn-outline-secondary:hover {
+    background: #30475e;
+    color: #ffffff;
+}
+
+body.modo-escuro a {
+    color: #65d0f0;
+}
+
+body.modo-escuro a:hover {
+    color: #a5e7fa;
+}
+
+body.modo-escuro footer {
+    border-color: var(--borda);
+}
+
+/* Tablets */
+
+@media (min-width: 601px) and (max-width: 900px) {
+    main.container {
+        max-width: 95%;
+    }
+
+    .cabecalho img {
+        max-height: 290px;
+    }
+
+    .secao .card-body {
+        padding: 22px;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    main.container {
+        padding: 20px 12px !important;
+    }
+
+    .cabecalho img {
+        max-height: 180px;
+    }
+
+    .cabecalho-texto .banner {
+        padding: 25px 17px;
+    }
+
+    .cabecalho-texto h1 {
+        font-size: 23px;
+    }
+
+    .cabecalho-texto p {
+        font-size: 14px;
+    }
+
+    .botoes-tema {
+        justify-content: center;
+    }
+
+    .botao-tema {
+        flex: 1;
+        padding: 9px 5px;
+        font-size: 11px;
+    }
+
+    .alert {
+        padding: 14px;
+        font-size: 13px;
+    }
+
+    .progresso .card-body {
+        padding: 16px;
+    }
+
+    .etapas-progresso {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+
+    .etapa-progresso {
+        font-size: 11px;
+    }
+
+    .secao {
+        margin-bottom: 18px;
+    }
+
+    .secao .card-header {
+        padding: 14px 15px;
+    }
+
+    .secao .card-header h2 {
+        font-size: 16px;
+    }
+
+    .secao .card-body {
+        padding: 17px;
+    }
+
+    .form-control,
+    .form-select {
+        min-height: 45px;
+    }
+
+    .form-check {
+        padding: 13px 12px 13px 2.1em;
+    }
+
+    .form-check-label {
+        font-size: 13px;
+    }
+
+    .secao .card-body .d-flex.gap-2 {
+        flex-direction: column;
+    }
+
+    .secao .card-body .btn {
+        width: 100%;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+/* BARRA DE PROGRESSO */
+
+.progresso {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #d5e2ef;
+    border-radius: 16px;
+    background: var(--cartao);
+    box-shadow: 0 10px 28px rgba(22, 62, 117, 0.10);
+}
+
+.progresso .card-body {
+    padding: 25px;
+}
+
+.progresso strong {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+}
+
+#textoProgresso {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 20px;
+    background: #e3f5fc;
+    color: #007da8;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+/* Trilha da barra */
+
+.barra-progresso {
+    position: relative;
+    height: 16px;
+    margin-top: 17px;
+    overflow: hidden;
+    border: 1px solid #d6e2ed;
+    border-radius: 30px;
+    background: #e8eff6;
+    box-shadow: inset 0 2px 4px rgba(20, 50, 80, 0.08);
+}
+
+/* Preenchimento animado */
+
+.barra-progresso-preenchida {
+    position: relative;
+    height: 100%;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 30px;
+    background: linear-gradient(
+        90deg,
+        #008db8,
+        #0878b5,
+        #163e75
+    );
+    box-shadow: 0 0 12px rgba(0, 141, 184, 0.35);
+    transition: width 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Brilho que passa pela barra */
+
+.barra-progresso-preenchida::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -45%;
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.55),
+        transparent
+    );
+    transform: skewX(-25deg);
+    animation: brilhoProgresso 2.5s infinite;
+}
+
+@keyframes brilhoProgresso {
+    0% {
+        left: -45%;
+    }
+
+    100% {
+        left: 120%;
+    }
+}
+
+/* Marcadores das etapas */
+
+.etapas-progresso {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 19px;
+}
+
+.etapa-progresso {
+    padding: 7px 11px;
+    border: 1px solid #dce5ef;
+    border-radius: 8px;
+    background: #f6f9fc;
+    color: #718096;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+.etapa-progresso.concluida {
+    border-color: #a9dce9;
+    background: #e5f7fb;
+    color: #087da5;
+    font-weight: 800;
+    box-shadow: 0 3px 8px rgba(0, 141, 184, 0.08);
+}
+
+/* CARTÕES DAS ETAPAS */
+
+.secao {
+    position: relative;
+    border: 1px solid #d9e3ed;
+    border-radius: 15px;
+    box-shadow: 0 7px 22px rgba(22, 62, 117, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.secao:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 28px rgba(22, 62, 117, 0.12);
+}
+
+.secao .card-header {
+    position: relative;
+    padding: 17px 22px;
+    border-bottom: 1px solid #d9e6f1;
+    background: linear-gradient(110deg, #eaf3fb, #f5f9fd);
+}
+
+.secao .card-header h2 {
+    font-size: 17px;
+    letter-spacing: 0.1px;
+}
+
+.secao .card-body {
+    padding: 27px;
+}
+
+/* Número das etapas */
+
+.numero {
+    border-radius: 10px;
+    background: linear-gradient(145deg, #087fae, #163e75);
+    box-shadow: 0 4px 10px rgba(22, 62, 117, 0.18);
+}
+
+/* CAMPOS */
+
+.form-label {
+    margin-bottom: 9px;
+    font-size: 13px;
+    letter-spacing: 0.1px;
+}
+
+.form-control,
+.form-select {
+    min-height: 49px;
+    border: 1px solid #ccd9e6;
+    border-radius: 9px;
+    background-color: #fbfdff;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.form-control:hover,
+.form-select:hover {
+    border-color: #8eabc6;
+    background-color: #ffffff;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #008db8;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(0, 141, 184, 0.12);
+}
+
+/* CONFIRMAÇÕES */
+
+.form-check {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+}
+
+.form-check:hover {
+    transform: translateX(2px);
+}
+
+/* BOTÕES */
+
+.btn {
+    min-height: 46px;
+    border-radius: 9px;
+    font-weight: 700;
+    letter-spacing: 0.1px;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    border: none;
+    background: linear-gradient(120deg, #087fae, #163e75);
+    box-shadow: 0 5px 12px rgba(22, 62, 117, 0.18);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(120deg, #076b96, #0b2850);
+    box-shadow: 0 7px 16px rgba(22, 62, 117, 0.24);
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary:hover {
+    transform: translateY(-1px);
+}
+
+/* BOTÕES DE TEMA */
+
+.botao-tema {
+    border-radius: 9px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.botao-tema:hover {
+    transform: translateY(-2px);
+}
+
+/* MODO ESCURO */
+
+body.modo-escuro .progresso {
+    border-color: #3a5065;
+    background: #1c2d3e;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.20);
+}
+
+body.modo-escuro #textoProgresso {
+    background: #23485c;
+    color: #7cdef7;
+}
+
+body.modo-escuro .barra-progresso {
+    border-color: #40566d;
+    background: #101e2d;
+}
+
+body.modo-escuro .barra-progresso-preenchida {
+    background: linear-gradient(
+        90deg,
+        #00a4ce,
+        #087eae,
+        #315ca0
+    );
+    box-shadow: 0 0 14px rgba(0, 164, 206, 0.32);
+}
+
+body.modo-escuro .etapa-progresso {
+    border-color: #40566b;
+    background: #24384b;
+    color: #bdcad7;
+}
+
+body.modo-escuro .etapa-progresso.concluida {
+    border-color: #287c99;
+    background: #20475a;
+    color: #83e2f7;
+}
+
+body.modo-escuro .secao {
+    border-color: #3a5065;
+    background: #1c2d3e;
+    box-shadow: 0 7px 22px rgba(0, 0, 0, 0.17);
+}
+
+body.modo-escuro .secao:hover {
+    border-color: #58748e;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+}
+
+body.modo-escuro .secao .card-header {
+    border-bottom-color: #40566b;
+    background: linear-gradient(110deg, #263c51, #2b4055);
+}
+
+body.modo-escuro .numero {
+    background: linear-gradient(145deg, #087fae, #164c80);
+}
+
+body.modo-escuro .form-control,
+body.modo-escuro .form-select {
+    border-color: #526b82;
+    background-color: #293d50;
+    color: #ffffff;
+}
+
+body.modo-escuro .form-control:hover,
+body.modo-escuro .form-select:hover {
+    border-color: #7895ad;
+    background-color: #30485e;
+}
+
+body.modo-escuro .form-control:focus,
+body.modo-escuro .form-select:focus {
+    border-color: #35b9e0;
+    background-color: #30485e;
+    color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(53, 185, 224, 0.13);
+}
+
+body.modo-escuro .form-check:hover {
+    transform: translateX(2px);
+}
+
+body.modo-escuro .btn-primary {
+    background: linear-gradient(120deg, #087fae, #164c80);
+}
+
+/* CELULARES E TABLETS */
+
+@media (max-width: 768px) {
+    .progresso .card-body {
+        padding: 19px;
+    }
+
+    .barra-progresso {
+        height: 13px;
+    }
+
+    .etapas-progresso {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+
+    .etapa-progresso {
+        text-align: center;
+        font-size: 11px;
+    }
+
+    .secao .card-body {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .progresso .card-body {
+        padding: 15px;
+    }
+
+    .etapa-progresso {
+        padding: 7px 5px;
+        font-size: 10px;
+    }
+
+    .secao .card-body {
+        padding: 16px;
+    }
+
+    .secao .card-header {
+        padding: 14px;
+    }
+
+    .secao .card-header h2 {
+        font-size: 15px;
+    }
+
+    .form-control,
+    .form-select {
+        min-height: 46px;
+    }
+}
+
+/* Respeita quem prefere menos animações */
+
+@media (prefers-reduced-motion: reduce) {
+    .barra-progresso-preenchida::after {
+        animation: none;
+    }
+
+    .secao,
+    .form-check,
+    .btn {
+        transition: none;
+    }
+}
